@@ -49,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -76,8 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.notifications),
             tooltip: 'Réservez moi un café',
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Vous avez réservé un café pour moi')));
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  content: Text('Vous avez réservé un café pour moi')));
             },
           ),
           IconButton(
@@ -125,115 +126,106 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             FittedBox(
               fit: BoxFit.fill,
-              child:
-                Image.asset('assets/images/café.jpg'),
+              child: Image.asset('assets/images/café.jpg'),
             ),
             Expanded(
                 flex: 2,
                 child: Row(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Text(
-                        'Annexe Café',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '18 Rue Saint-Michel, 35000 Rennes',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(fontWeight: FontWeight.w200),
-                      ),
-                  ])
-                ),
-                Expanded(
-                    flex: 1,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                      Icon(
-                        Icons.star,
-                        color: Colors.red,
-                        size: 24.0,
-                      ),
-                      Text("156")
-                    ])
-                ),
-              ],
-            )),
+                  children: [
+                    Expanded(
+                        flex: 3,
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Text(
+                                'Annexe Café',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '18 Rue Saint-Michel, 35000 Rennes',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(fontWeight: FontWeight.w200),
+                              ),
+                            ])),
+                    Expanded(
+                        flex: 1,
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.star,
+                                color: Colors.red,
+                                size: 24.0,
+                              ),
+                              Text("156")
+                            ])),
+                  ],
+                )),
             Expanded(
                 flex: 2,
                 child: Row(
-              children: <Widget>[
-                Expanded(child: Column(children: [
-                  IconButton(
-                    icon: const Icon(Icons.phone),
-                    tooltip: 'Appeler',
-                    onPressed: () {
-                      // setState(() {
-                      //   _volume += 10;
-                      // });
-                    },
-                  ),
-                  Text(
-                      "Appeler".toUpperCase(),
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ])),
-                Expanded(child: Column(children: [
-                  IconButton(
-                    icon: const Icon(Icons.near_me),
-                    tooltip: 'Itinéraire',
-                    onPressed: () {
-                      // setState(() {
-                      //   _volume += 10;
-                      // });
-                    },
-                  ),
-                  Text(
-                    "Itinéraire".toUpperCase(),
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ])),Expanded(child: Column(children: [
-                  IconButton(
-                    icon: const Icon(Icons.share),
-                    tooltip: 'Share',
-                    onPressed: () {
-                      // setState(() {
-                      //   _volume += 10;
-                      // });
-                    },
-                  ),
-                  Text(
-                    "Share".toUpperCase(),
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ])),
-              ],
-            )),
+                  children: <Widget>[
+                    Expanded(
+                        child: Column(children: [
+                      IconButton(
+                        icon: const Icon(Icons.phone),
+                        tooltip: 'Appeler',
+                        onPressed: () {
+                          // setState(() {
+                          //   _volume += 10;
+                          // });
+                        },
+                      ),
+                      Text(
+                        "Appeler".toUpperCase(),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ])),
+                    Expanded(
+                        child: Column(children: [
+                      IconButton(
+                        icon: const Icon(Icons.near_me),
+                        tooltip: 'Itinéraire',
+                        onPressed: () {
+                          // setState(() {
+                          //   _volume += 10;
+                          // });
+                        },
+                      ),
+                      Text(
+                        "Itinéraire".toUpperCase(),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ])),
+                    Expanded(
+                        child: Column(children: [
+                      IconButton(
+                        icon: const Icon(Icons.share),
+                        tooltip: 'Share',
+                        onPressed: () {
+                          // setState(() {
+                          //   _volume += 10;
+                          // });
+                        },
+                      ),
+                      Text(
+                        "Share".toUpperCase(),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ])),
+                  ],
+                )),
             Expanded(
                 flex: 7,
-                child: const Text(
-              '''LAnnexe Café est un endroit sympa avec de belles
-                pierres apparentes, un bar en bois, des hauts
-                tabourets avec la reproduction dune célèbre marque
-            de bière et une ambiance comme on les aime dans
-            ce quartier de fêtards du jeudi soir et même de toute
-            la semaine. Retransmission de matchs, mix de DJ,
-                happy-hours de 17h à 21 h, ça bouge et ça samuse.
-            On apprécie aussi cette lumière bleutée qui fait la
-            marque de fabrique de lendroit dans lequel se vit de
-            belles soirées estudiantines. Shooters, tableau des
-            consommations affiché au-dessus du bar à la
-            manière de la restauration rapide et bar pris dassaut,
-            voilà comment LAnnexe assure ambiance dans un
-                quartier surpeuplé de bars''',
-            )),
+                child: Container(
+                  margin: EdgeInsets.all(20.0),
+                    child: Text(
+                      'LAnnexe Café est un endroit sympa avec de belles pierres apparentes, un bar en bois, des hauts tabourets avec la reproduction dune célèbre marque de bière et une ambiance comme on les aime dans ce quartier de fêtards du jeudi soir et même de toute la semaine. Retransmission de matchs, mix de DJ, happy-hours de 17h à 21 h, ça bouge et ça samuse. On apprécie aussi cette lumière bleutée qui fait la marque de fabrique de lendroit dans lequel se vit de belles soirées estudiantines. Shooters, tableau des consommations affiché au-dessus du bar à la manière de la restauration rapide et bar pris dassaut, voilà comment LAnnexe assure ambiance dans un quartier surpeuplé de bars.',
+                    textAlign: TextAlign.justify,
+                ))),
           ],
         ),
       ),
