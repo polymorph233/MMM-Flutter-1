@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               Text(
                                 '18 Rue Saint-Michel, 35000 Rennes',
                                 textAlign: TextAlign.left,
-                                style: TextStyle(fontWeight: FontWeight.w200),
+                                style: TextStyle(fontWeight: FontWeight.w300),
                               ),
                             ])),
                     Expanded(
