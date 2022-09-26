@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Annexe Café Page'),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.add_alert),
+            icon: const Icon(Icons.notifications),
             tooltip: 'Réservez moi un café',
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -123,32 +123,52 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Expanded(child: Image.asset('assets/images/café.jpg')),
-            Expanded(child: Row(
+            FittedBox(
+              fit: BoxFit.fill,
+              child:
+                Image.asset('assets/images/café.jpg'),
+            ),
+            Expanded(
+                flex: 2,
+                child: Row(
               children: [
-                Column(children: const [
-                  Text(
-                    'Annexe Café',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    '18 Rue Saint-Michel, 35000 Rennes',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(fontWeight: FontWeight.w200),
-                  ),
-                ],),
-                Row(children: const [
-                  Icon(
-                    Icons.star,
-                    color: Colors.red,
-                    size: 24.0,
-                  ),
-                  Text("156")
-                ],)
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Text(
+                        'Annexe Café',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '18 Rue Saint-Michel, 35000 Rennes',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontWeight: FontWeight.w200),
+                      ),
+                  ])
+                ),
+                Expanded(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                      Icon(
+                        Icons.star,
+                        color: Colors.red,
+                        size: 24.0,
+                      ),
+                      Text("156")
+                    ])
+                ),
               ],
             )),
-            Expanded(child: Row(
+            Expanded(
+                flex: 2,
+                child: Row(
               children: <Widget>[
                 Expanded(child: Column(children: [
                   IconButton(
@@ -159,18 +179,26 @@ class _MyHomePageState extends State<MyHomePage> {
                       //   _volume += 10;
                       // });
                     },
-                  )
+                  ),
+                  Text(
+                      "Appeler".toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ])),
                 Expanded(child: Column(children: [
                   IconButton(
-                    icon: const Icon(Icons.mouse),
+                    icon: const Icon(Icons.near_me),
                     tooltip: 'Itinéraire',
                     onPressed: () {
                       // setState(() {
                       //   _volume += 10;
                       // });
                     },
-                  )
+                  ),
+                  Text(
+                    "Itinéraire".toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ])),Expanded(child: Column(children: [
                   IconButton(
                     icon: const Icon(Icons.share),
@@ -180,11 +208,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       //   _volume += 10;
                       // });
                     },
-                  )
+                  ),
+                  Text(
+                    "Share".toUpperCase(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ])),
               ],
             )),
-            const Text(
+            Expanded(
+                flex: 7,
+                child: const Text(
               '''LAnnexe Café est un endroit sympa avec de belles
                 pierres apparentes, un bar en bois, des hauts
                 tabourets avec la reproduction dune célèbre marque
@@ -199,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
             manière de la restauration rapide et bar pris dassaut,
             voilà comment LAnnexe assure ambiance dans un
                 quartier surpeuplé de bars''',
-            ),
+            )),
           ],
         ),
       ),
